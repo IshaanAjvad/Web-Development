@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Login Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .login-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const container = document.createElement("div");
+            container.className = "login-container";
+
+            const heading = document.createElement("h2");
+            heading.textContent = "Login";
+            container.appendChild(heading);
+
+            const emailLabel = document.createElement("label");
+            emailLabel.textContent = "Email:";
+            container.appendChild(emailLabel);
+            
+            const emailInput = document.createElement("input");
+            emailInput.type = "email";
+            emailInput.placeholder = "Enter your email";
+            container.appendChild(emailInput);
+
+            const passwordLabel = document.createElement("label");
+            
+            passwordLabel.textContent = "Password:";
+            container.appendChild(passwordLabel);
+            
+            const passwordInput = document.createElement("input");
+            passwordInput.type = "password";
+            passwordInput.placeholder = "Enter your password";
+            container.appendChild(passwordInput);
+
+            const loginButton = document.createElement("button");
+            loginButton.textContent = "Login";
+            loginButton.addEventListener("click", function() {
+                if (!emailInput.value || !passwordInput.value) {
+                    alert("Please fill in all fields.");
+                } else {
+                    alert(`Email: ${emailInput.value}\nPassword: ${passwordInput.value}`);
+                }
+            });
+            container.appendChild(loginButton);
+
+            document.body.appendChild(container);
+        });
+    </script>
+</body>
+</html>
