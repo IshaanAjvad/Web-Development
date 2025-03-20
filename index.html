@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Generate Bill</h2>
+        <form id="billForm">
+            <h3>Buyer Details</h3>
+            <label>Name: <input type="text" id="buyerName" required></label>
+            <label>Address: <input type="text" id="buyerAddress" required></label>
+            <label>Contact: <input type="text" id="buyerContact" required></label>
+            <label>Email: <input type="email" id="buyerEmail" required></label>
+            
+            <h3>Product Details</h3>
+            <div id="products">
+                <div class="product">
+                    <input type="text" placeholder="Product Name" class="productName" required>
+                    <input type="number" placeholder="Quantity" class="productQuantity" required>
+                    <input type="number" placeholder="Unit Price" class="productPrice" required>
+                    <button type="button" class="removeProduct">Remove</button>
+                </div>
+            </div>
+            <button type="button" id="addProduct">Add Product</button>
+
+            <h3>Payment Details</h3>
+            <label>Payment Method: 
+                <select id="paymentMethod">
+                    <option value="Cash">Cash</option>
+                    <option value="Card">Card</option>
+                    <option value="UPI">UPI</option>
+                </select>
+            </label>
+            <button type="submit">Generate Bill</button>
+        </form>
+
+        <div id="billPreview"></div>
+        <button id="printBill">Print</button>
+        <button id="exportPDF">Export as PDF</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
